@@ -10,7 +10,6 @@ public class NewsAgency implements ObservableAgency {
     @Override
     public void addObserver(ObserverChannel observerChannel) {
         channelList.add(observerChannel);
-
     }
 
     @Override
