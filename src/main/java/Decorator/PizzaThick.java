@@ -2,11 +2,12 @@ package Decorator;
 
 import java.math.BigDecimal;
 
-public class Pizza extends PizzaAbstract {
+public class PizzaThick extends PizzaAbstract {
+    private final BigDecimal thick = new BigDecimal(2);
 
     @Override
     public BigDecimal getPrice() {
-        return super.getPrice();
+        return super.getPrice().add(thick);
     }
 
     @Override

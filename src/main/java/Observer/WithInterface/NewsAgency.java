@@ -2,11 +2,9 @@ package Observer.WithInterface;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class NewsAgency implements ObservableAgency {
 
     private final List<ObserverChannel> channelList = new ArrayList<>();
-
     @Override
     public void addObserver(ObserverChannel observerChannel) {
         channelList.add(observerChannel);
