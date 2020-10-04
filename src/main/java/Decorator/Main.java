@@ -2,14 +2,14 @@ package Decorator;
 
 public class Main {
     public static void main(String[] args) {
-        Pizza pizzaThick = new Pizza();
-        System.out.println(pizzaThick.getPrice());
-        System.out.println(pizzaThick.toString());
+        Pizza pizza = new Pizza();
+        System.out.println(pizza.getPrice());
+        System.out.println(pizza.toString());
 
         System.out.println();
 
         //Musisz zaznaczyć co ma dekorować (jaką pizze)
-        WithMozzarella withMozzarella = new WithMozzarella(pizzaThick);
+        WithMozzarella withMozzarella = new WithMozzarella(pizza);
         System.out.println(withMozzarella.getPrice());
         System.out.println(withMozzarella.toString());
 
@@ -24,6 +24,20 @@ public class Main {
         WithHam withHamAndMozzarella = new WithHam(withMozzarella);
         System.out.println(withHamAndMozzarella.getPrice());
         System.out.println(withHamAndMozzarella.toString());
-    }
 
+        System.out.println();
+
+        PizzaThick pizzaThick = new PizzaThick();
+        WithHam pizzaTcickWithHam = new WithHam(pizzaThick);
+        System.out.println(pizzaTcickWithHam.getPrice());
+        System.out.println(pizzaTcickWithHam.toString());
+
+    }
 }
+
+/*
+• zapewnia większą elastyczność niż statyczne dziedziczenie
+• pozwala uniknąć tworzenia przeładowanych funkcjami klas na wysokich poziomach hierarchii
+• dekorator i powiązany z nim komponent nie są identyczne
+• powstawanie wielu małych obiektów
+ */
